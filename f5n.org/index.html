@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- MAIN -->
+  <section class="main">
+    <div class="row">
+      <div class="large-13 large-centered columns" role="main">
+        <article>
+
+          <div class="content-header"><h2></h2></div>
+
+<div class="row">
+  <div class="large-8 columns">
+    <h3>Latest Posts</h3>
+    <ul>
+
+{%- set idx = 0 -%}
+{% for entry in entries %}
+{%- if entry.section_index %}{% continue %}{% endif %}
+{%- if entry.section == "blog" or entry.section == "stack" -%}
+{% if idx == 10 %}{% break %}{% endif %}
+      <li><a href="/{{ entry.link | safe }}">{{ entry.title }}</a></li>
+{%- set_global idx = idx + 1 -%}
+{%- endif -%}
+{% endfor %}
+
+    </ul>
+  </div>
+
+  <div class="large-8 columns">
+    <h3 style="text-align: right">(╯°□°）╯︵ ┻━┻</h3>
+    <p>&nbsp;</p>
+    <p class="txr">
+    I will not be pushed, filed, stamped, indexed<br />
+    briefed, debriefed or numbered.<br />
+    My life is my own.<br />
+    </p>
+  </div>
+</div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->
+{% endblock content %}

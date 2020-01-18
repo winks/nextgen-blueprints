@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- MAIN -->
+  <section class="main">
+    <div class="row">
+      <div class="large-13 large-centered columns" role="main">
+        <article>
+
+<div class="content-header"><h2>{{ Page.title | safe }}</h2></div>
+{{ Page.content | safe }}
+
+        </article>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->
+{% endblock content %}

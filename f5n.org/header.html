@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>{{ Site.title | safe }} : {{ Page.title | safe }}</title>
+  <link rel="stylesheet" href="{{ Site.baseurl | safe }}/media/css/foundation.min.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="{{ Site.baseurl | safe }}/media/css/new.css" type="text/css" media="screen" />
+  {% if Site.params_highlight %}<link rel="stylesheet" href="{{ Site.baseurl | safe }}/css/highlight/{{ Site.params_highlight }}.css">{% endif %}
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Site.baseurl | safe }}/media/img/apple-touch-icon-144-precomposed.png">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
+  {% if rsslink %}<link href="{{ rsslink | safe }}" rel="alternate" type="application/atom+xml" title="{{ Site.title }}" />{% endif %}
+  {% if Page.description %}<meta name="description" content="{{ Page.description }}">{% endif %}
+  {% if Site.params_googleAuthorship %}<link rel="author" href="http://plus.google.com/{{ Site.params_googleAuthorship }}">{% endif %}
+
+<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+<link rel="micropub" href="http://i.f5n.de/micropub/index.php" />
+<link rel="webmention" href="https://webmention.io/f5n.org/webmention" />
+<link rel="pingback" href="https://webmention.io/f5n.org/xmlrpc" />
+</head>
+<body{% if Site.params_theme %} class="{{ Site.params_theme }}"{% endif %}>
+
+  <div class="headerarea top">
+    <h1><a href="{{ Site.baseurl | safe }}/">{{ Page.title }}</a></h1>
+  </div>
+  <div class="row">
+    <div class="small-17 small-centered columns xall">
+<!-- NAVI -->
+  <div class="row">
+    <div class="large-13 large-centered columns">
+
+  <div class="row">
+  <div class="gah">
+
+    <div class="large-7 columns">
+       <ul class="breadcrumbs">
+         <li class="first-elem"><a id="top2" href="/">Home</a></li>
+         <li><a href="/stack">Stack</a></li>
+         <li><a href="/code">Code</a></li>
+         <li><a href="/blog">Blog</a></li>
+         <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+    <div class="large-4 columns hide-for-small">
+      <ul class="breadcrumbs">
+        <li class="first-elem"><span>\o/</span></li>
+      </ul>
+    </div>
+    <div class="large-5 columns">
+      <ul class="breadcrumbs brd right">
+        <li class="first-elem"><a href="/">f5n</a></li>
+{% if Page.title != Site.title %}
+ {% if Page.section %}
+         <li><a href="/{{ Page.section | safe }}">{{ Page.section | safe }}</a></li>
+ {% else %}
+  {% if Page.title == "Blogs" %}
+        <li><a href="/blog">blog</a></li>
+  {% else %}
+    {% if Page.title == "Stacks" %}
+        <li><a href="/stack">stack</a></li>
+    {% else %}
+        <li><a href="/{{ Page.title | lower | safe }}">{{ Page.title | lower | safe }}</a></li>
+    {% endif %}
+  {% endif %}
+ {% endif %}
+{% endif %}     </ul>
+    </div>
+
+  </div>
+  </div>
+<!-- /NAVI -->
+    </div>
+  </div>

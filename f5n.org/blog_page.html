@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- MAIN -->
+  <section class="main">
+    <div class="row">
+      <div class="large-13 large-centered columns" role="main">
+        <article class="h-entry">
+
+<div class="content-header">
+  <span class="post-date dt-published">{{ Page.datefull }}<br />{{ Page.readingtime }} minute read</span>
+  <h2 class="p-name">{{ Page.title }}</h2>
+</div>
+<div class="post-content e-content">
+{{ Page.content | safe }}
+</div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->
+{% endblock content %}

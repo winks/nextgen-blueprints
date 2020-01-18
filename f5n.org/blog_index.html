@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- MAIN -->
+  <section class="main">
+    <div class="row">
+      <div class="large-13 large-centered columns" role="main">
+        <article>
+
+<div class="content-header"><h2>Archives: Blog posts</h2></div>
+<div class="page-listing">
+
+{%- set prev_year = "0" -%}
+{%- set is_first = true -%}
+
+{% for entry in entries %}
+{%- if not entry.section_index -%}
+{% if not is_first %}
+</ul>
+{% endif %}
+
+{% if entry.year != prev_year -%}
+<h3>{{ entry.year }}</h3>
+<ul class="posts">
+{% endif -%}
+ <li>
+  <time class="pull-right post-list">{{ entry.dateshort }}</time>
+  <span><a href="{{ Site.baseurl | safe }}/{{ entry.link | safe }}">{{ entry.title }}</a></span>
+ </li>
+
+{%- set_global prev_year = entry.year -%}
+{%- set_global is_first = false -%}
+{%- endif -%}
+{% endfor %}
+</ul>
+
+</div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->
+{% endblock content %}
