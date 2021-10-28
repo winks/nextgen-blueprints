@@ -10,9 +10,7 @@
   <span class="post-date">{{ Page.datefull }}<br />{{ Page.readingtime }} minute read</span>
   <h2>{{ Page.title }}</h2>
 </div>
-          <div class="stackdef">
-            <em>The Stack</em> is a weekly digest of hopefully interesting links that doesn't really get published every week.
-          </div>
+{% include "stackdef.html" %}
 <div class="stackpost-content">
 {{ Page.content | safe }}
 </div>
