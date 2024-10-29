@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <title>{{ Site.title | safe }} : {{ Page.title | safe }}</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ Site.title | safe }} : {{ Page.title | safe }}</title>
+  <meta name="description" content="f5n.org - a personal website">
   <link rel="stylesheet" href="/media/css/v3.min.css" type="text/css" media="screen" />
   {% if Site.params_highlight -%}
   <link rel="stylesheet" href="{{ Site.baseurl | safe }}/css/highlight/{{ Site.params_highlight }}.css">
@@ -47,6 +48,7 @@
          <li class="first-elem"><a id="top2" href="/">Home</a></li>
          <li><a href="/blog">Blog</a></li>
          <li><a href="/stack">Stack</a></li>
+         <li><a href="/til">TIL</a></li>
          <li><a href="/code">Code</a></li>
          <li><a href="/about">About</a></li>
         </ul>

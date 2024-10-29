@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- MAIN -->
+  <section class="main">
+    <div class="row">
+      <div class="large-13 large-centered columns" role="main">
+        <article>
+
+<div class="content-header"><h2>Archive: TIL posts</h2></div>
+<div class="page-listing">
+
+<ul class="posts"></ul>
+{% for entry in entries %}
+{%- if not entry.section_index -%}
+ <li>
+  <span><a href="/{{ entry.link | safe }}">{{ entry.title }}</a></span>
+ </li>
+
+{%- endif -%}
+{% endfor %}
+</ul>
+
+</div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+<!-- /MAIN -->
+{% endblock content %}
