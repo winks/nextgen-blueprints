@@ -7,12 +7,16 @@
         <article>
 
 <div class="content-header"><h2>Archive: TIL posts</h2></div>
+
+<p>These are small snippets and more unstructured technical posts.</p>
+
 <div class="page-listing">
 
 <ul class="posts"></ul>
 {% for entry in entries %}
 {%- if not entry.section_index -%}
  <li>
+  <time class="pull-right post-list">&nbsp;</time>
   <span><a href="/{{ entry.link | safe }}">{{ entry.title }}</a></span>
  </li>
 
