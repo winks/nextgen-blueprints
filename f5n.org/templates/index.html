@@ -25,6 +25,22 @@
 {% endfor %}
 
     </ul>
+
+    <h4>Latest TIL posts</h4>
+    <ul>
+
+{%- set idx = 0 -%}
+{% for entry in entries %}
+{%- if entry.section_index %}{% continue %}{% endif %}
+{%- if entry.section == "til" -%}
+{% if idx == 10 %}{% break %}{% endif %}
+      <li><time class="pull-right post-list">{{ entry.dateshort }}</time>
+      <a href="/{{ entry.link | safe }}">{{ entry.title }}</a></li>
+{%- set_global idx = idx + 1 -%}
+{%- endif -%}
+{% endfor %}
+
+    </ul>
   </div>
 
   <div class="large-5 columns">
